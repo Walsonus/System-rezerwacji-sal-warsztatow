@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp", "WpfApp\WpfApp\WpfApp.csproj", "{5BA2A631-89DC-427B-91D9-25D2F47F9236}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Core", "ReservationSystem.Core\ReservationSystem.Core.csproj", "{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Data", "ReservationSystem.Data\ReservationSystem.Data.csproj", "{F0E32BE7-518F-4847-8D11-9401125FDEAC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{5BA2A631-89DC-427B-91D9-25D2F47F9236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5BA2A631-89DC-427B-91D9-25D2F47F9236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5BA2A631-89DC-427B-91D9-25D2F47F9236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
