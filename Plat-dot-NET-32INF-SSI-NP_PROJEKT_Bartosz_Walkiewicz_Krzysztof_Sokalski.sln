@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski", "Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski.csproj", "{88201F96-AA32-44EB-83CF-DD35C37F54EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{88201F96-AA32-44EB-83CF-DD35C37F54EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88201F96-AA32-44EB-83CF-DD35C37F54EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88201F96-AA32-44EB-83CF-DD35C37F54EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88201F96-AA32-44EB-83CF-DD35C37F54EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CFB51772-36C2-402B-9001-88C80C8E3108}
+	EndGlobalSection
+EndGlobal
