@@ -1,0 +1,47 @@
+## Foldery tymczasowe Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build output
+bin/
+obj/
+[Bb]uild/
+[Ll]og/
+
+## Pliki NuGet
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+
+## Foldery testowe
+TestResults/
+*.VisualState.xml
+*.vsp
+*.vspx
+*.sap
+
+## Rider / JetBrains
+.idea/
+
+## Mac OS
+.DS_Store
+
+## Windows thumbnail cache
+Thumbs.db
+
+## Inne pliki systemowe
+ehthumbs.db
+desktop.ini
+
+## Pliki lokalne konfiguracji
+appsettings.*.json
+
+## Folder publish
+publish/
+
+## Pliki generowane przez dotnet watch
+**/Generated/
