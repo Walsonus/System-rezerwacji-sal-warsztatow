@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.core\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|solutionrelative:reservationsystem.core\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7855777-310A-4710-A6FA-96A622A8A34A}|TestReservationSystem\\TestReservationSystem.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\testreservationsystem\\testroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7855777-310A-4710-A6FA-96A622A8A34A}|TestReservationSystem\\TestReservationSystem.csproj|solutionrelative:testreservationsystem\\testroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.data\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|solutionrelative:reservationsystem.data\\roomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.core\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|solutionrelative:reservationsystem.core\\iroomservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.data\\reservationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|solutionrelative:reservationsystem.data\\reservationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.data\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F0E32BE7-518F-4847-8D11-9401125FDEAC}|ReservationSystem.Data\\ReservationSystem.Data.csproj|solutionrelative:reservationsystem.data\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.core\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|solutionrelative:reservationsystem.core\\room.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.core\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|solutionrelative:reservationsystem.core\\reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|c:\\users\\krzysztof\\desktop\\system-rezerwacji-sal-warsztatow\\reservationsystem.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AEC534AA-3A0B-41F7-BFF4-9600D2719FC1}|ReservationSystem.Core\\ReservationSystem.Core.csproj|solutionrelative:reservationsystem.core\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\wpfapp\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\wpfapp\\wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,36 +34,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestRoomService.cs",
+              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\TestReservationSystem\\TestRoomService.cs",
+              "RelativeDocumentMoniker": "TestReservationSystem\\TestRoomService.cs",
+              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\TestReservationSystem\\TestRoomService.cs",
+              "RelativeToolTip": "TestReservationSystem\\TestRoomService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:31:47.467Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "RoomService.cs",
+              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\RoomService.cs",
+              "RelativeDocumentMoniker": "ReservationSystem.Data\\RoomService.cs",
+              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\RoomService.cs",
+              "RelativeToolTip": "ReservationSystem.Data\\RoomService.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:16:08.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IRoomService.cs",
+              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\IRoomService.cs",
+              "RelativeDocumentMoniker": "ReservationSystem.Core\\IRoomService.cs",
+              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\IRoomService.cs",
+              "RelativeToolTip": "ReservationSystem.Core\\IRoomService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-29T16:13:52.705Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ReservationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\ReservationDbContext.cs",
               "RelativeDocumentMoniker": "ReservationSystem.Data\\ReservationDbContext.cs",
               "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\ReservationDbContext.cs",
               "RelativeToolTip": "ReservationSystem.Data\\ReservationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-29T15:49:49.397Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\Class1.cs",
-              "RelativeDocumentMoniker": "ReservationSystem.Data\\Class1.cs",
-              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Data\\Class1.cs",
-              "RelativeToolTip": "ReservationSystem.Data\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:49:32.832Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Reservation.cs",
               "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Reservation.cs",
               "RelativeDocumentMoniker": "ReservationSystem.Core\\Reservation.cs",
@@ -75,55 +98,21 @@
               "RelativeToolTip": "ReservationSystem.Core\\Reservation.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:44:26.935Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Room.cs",
-              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Room.cs",
-              "RelativeDocumentMoniker": "ReservationSystem.Core\\Room.cs",
-              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Room.cs",
-              "RelativeToolTip": "ReservationSystem.Core\\Room.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:43:45.487Z",
+              "WhenOpened": "2025-04-29T15:44:26.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Class1.cs",
-              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Class1.cs",
-              "RelativeDocumentMoniker": "ReservationSystem.Core\\Class1.cs",
-              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Class1.cs",
-              "RelativeToolTip": "ReservationSystem.Core\\Class1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Title": "Room.cs",
+              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Room.cs",
+              "RelativeDocumentMoniker": "ReservationSystem.Core\\Room.cs",
+              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\ReservationSystem.Core\\Room.cs",
+              "RelativeToolTip": "ReservationSystem.Core\\Room.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:43:28.581Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\WpfApp\\WpfApp\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "WpfApp\\WpfApp\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\WpfApp\\WpfApp\\MainWindow.xaml",
-              "RelativeToolTip": "WpfApp\\WpfApp\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-29T15:33:49.685Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\WpfApp\\WpfApp\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "WpfApp\\WpfApp\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\Krzysztof\\Desktop\\System-rezerwacji-sal-warsztatow\\WpfApp\\WpfApp\\MainWindow.xaml.cs",
-              "RelativeToolTip": "WpfApp\\WpfApp\\MainWindow.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T15:33:49.594Z"
+              "WhenOpened": "2025-04-29T15:43:45.487Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -16,3 +16,5 @@ C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Da
 C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Data\obj\Debug\net8.0\ReservationSystem.Data.pdb
 C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Data\obj\Debug\net8.0\ReservationSystem.Data.genruntimeconfig.cache
 C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Data\obj\Debug\net8.0\ref\ReservationSystem.Data.dll
+C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Data\bin\Debug\net8.0\xunit.abstractions.dll
+C:\Users\Krzysztof\Desktop\System-rezerwacji-sal-warsztatow\ReservationSystem.Data\bin\Debug\net8.0\xunit.runner.visualstudio.testadapter.dll

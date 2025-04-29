@@ -10,12 +10,14 @@ namespace ReservationSystem.Data
 {
     public class ReservationDbContext : DbContext
     {
-        DbSet<Room> Rooms { get; set; }
-        DbSet<Reservation> Reservations { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
+        public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ReservationSystem;Trusted_Connection=True;");
+            if(!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ReservationSystem;Trusted_Connection=True;");
         }
     }
 }

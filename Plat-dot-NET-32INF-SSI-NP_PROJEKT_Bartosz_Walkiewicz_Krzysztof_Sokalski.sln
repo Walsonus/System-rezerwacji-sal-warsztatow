@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Core", "R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystem.Data", "ReservationSystem.Data\ReservationSystem.Data.csproj", "{F0E32BE7-518F-4847-8D11-9401125FDEAC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestReservationSystem", "TestReservationSystem\TestReservationSystem.csproj", "{F7855777-310A-4710-A6FA-96A622A8A34A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0E32BE7-518F-4847-8D11-9401125FDEAC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7855777-310A-4710-A6FA-96A622A8A34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7855777-310A-4710-A6FA-96A622A8A34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7855777-310A-4710-A6FA-96A622A8A34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7855777-310A-4710-A6FA-96A622A8A34A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
