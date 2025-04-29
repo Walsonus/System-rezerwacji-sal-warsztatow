@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{88201F96-AA32-44EB-83CF-DD35C37F54EB}</ProjectGuid>
+    <ProjectGuid>{5BA2A631-89DC-427B-91D9-25D2F47F9236}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Plat_dot_NET_32INF_SSI_NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski</RootNamespace>
-    <AssemblyName>Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski</AssemblyName>
+    <RootNamespace>WpfApp</RootNamespace>
+    <AssemblyName>WpfApp</AssemblyName>
     <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

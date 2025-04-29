@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Plat_dot_NET_32INF_SSI_NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski
+namespace WpfApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Plat_dot_NET_32INF_SSI_NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski
+namespace WpfApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

@@ -3,12 +3,15 @@
   "WorkspaceRootPath": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{88201F96-AA32-44EB-83CF-DD35C37F54EB}|Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski.csproj|d:\\studia\\semestr 6\\.net\\projekt\\plat-dot-net-32inf-ssi-np_projekt_bartosz_walkiewicz_krzysztof_sokalski\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{88201F96-AA32-44EB-83CF-DD35C37F54EB}|Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski.csproj|solutionrelative:mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|d:\\studia\\semestr 6\\.net\\projekt\\plat-dot-net-32inf-ssi-np_projekt_bartosz_walkiewicz_krzysztof_sokalski\\wpfapp\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\wpfapp\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{88201F96-AA32-44EB-83CF-DD35C37F54EB}|Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski.csproj|d:\\studia\\semestr 6\\.net\\projekt\\plat-dot-net-32inf-ssi-np_projekt_bartosz_walkiewicz_krzysztof_sokalski\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{88201F96-AA32-44EB-83CF-DD35C37F54EB}|Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|d:\\studia\\semestr 6\\.net\\projekt\\plat-dot-net-32inf-ssi-np_projekt_bartosz_walkiewicz_krzysztof_sokalski\\wpfapp\\wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BA2A631-89DC-427B-91D9-25D2F47F9236}|WpfApp\\WpfApp\\WpfApp.csproj|solutionrelative:wpfapp\\wpfapp\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00000000-0000-0000-0000-000000000000}|\u003CSolution\u003E|App.wpf||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -28,26 +31,37 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "MainWindow.xaml",
-              "ToolTip": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\MainWindow.xaml",
-              "RelativeToolTip": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\WpfApp\\WpfApp\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "WpfApp\\WpfApp\\MainWindow.xaml",
+              "ToolTip": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\WpfApp\\WpfApp\\MainWindow.xaml",
+              "RelativeToolTip": "WpfApp\\WpfApp\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-04-29T10:24:38.926Z",
+              "WhenOpened": "2025-04-29T15:33:49.685Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "MainWindow.xaml.cs",
-              "ToolTip": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\MainWindow.xaml.cs",
-              "RelativeToolTip": "MainWindow.xaml.cs",
+              "DocumentMoniker": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\WpfApp\\WpfApp\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "WpfApp\\WpfApp\\MainWindow.xaml.cs",
+              "ToolTip": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\WpfApp\\WpfApp\\MainWindow.xaml.cs",
+              "RelativeToolTip": "WpfApp\\WpfApp\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-29T10:24:38.235Z",
+              "WhenOpened": "2025-04-29T15:33:49.594Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.wpf",
+              "DocumentMoniker": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\App.wpf.csproj",
+              "RelativeDocumentMoniker": "App.wpf.csproj",
+              "ToolTip": "D:\\Studia\\SEMESTR 6\\.NET\\Projekt\\Plat-dot-NET-32INF-SSI-NP_PROJEKT_Bartosz_Walkiewicz_Krzysztof_Sokalski\\App.wpf.csproj",
+              "RelativeToolTip": "App.wpf.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-04-29T10:39:09.418Z"
             }
           ]
         }
