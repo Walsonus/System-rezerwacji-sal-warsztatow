@@ -18,7 +18,11 @@ namespace ReservationSystem.Data
 
         //method to add a reservation
         public void AddReservation(Reservation reservation)
-        {
+        {   
+            if(reservation.Room != null && reservation.Room.Id > 0)
+            {
+                reservation.Room = context.Rooms.Find(reservation.Room.Id);
+            }
             context.Reservations.Add(reservation);
             context.SaveChanges();
         }
