@@ -1,0 +1,45 @@
+﻿<mah:MetroWindow x:Class="WpfAppNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNew"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <TextBox IsReadOnly="True" Grid.ColumnSpan="3" Grid.Row="0" Grid.Column="0" Text="REZERWACJA SAL"  
+                 FontFamily="Impact" FontSize="40"
+                 VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="0"/>
+        <Button x:Name="reservationBTN" Height="100" Width="200" Grid.Row="1" Grid.Column="0" 
+                FontFamily="Impact" FontSize="20" Click="AddReservationBTN_Click">
+            <TextBlock Text="Rezerwuj salę" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+        <Button x:Name="showAvailableRoomsBTN" Height="100" Width="200" Grid.Row="1" Grid.Column="1"
+                FontFamily="Impact" FontSize="20" Click="ShowAvailableRoomsBTN_Click"> 
+            <TextBlock Text="Sprawdź dostępne sale" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+            <Button x:Name="showReservationBTN" Height="100" Width="200" Grid.Row="1" Grid.Column="2" 
+                    FontFamily="Impact" FontSize="20">
+            <TextBlock Text="Sprawdź rezerwacje" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+
+            <Button x:Name="backBTN" Height="100" Width="200" Grid.Row="2" Grid.Column="1" 
+                    FontFamily="Impact" FontSize="20">
+            <TextBlock Text="Wstecz" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+    </Grid>
+</mah:MetroWindow>
