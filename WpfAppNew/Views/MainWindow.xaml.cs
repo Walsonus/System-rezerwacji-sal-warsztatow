@@ -1,5 +1,7 @@
 ﻿using MahApps.Metro.Controls;
+using Microsoft.EntityFrameworkCore;
 using ReservationSystem.Core;
+using ReservationSystem.Data;
 using System;
 using System.Linq;
 using System.Text;
@@ -9,12 +11,18 @@ namespace WpfAppNew
 {
     public partial class MainWindow : MetroWindow
     {
-        private readonly IRoomService _roomService;
+        //private readonly RoomService roomService;
+        static public DbContextOptions<ReservationDbContext> options = new DbContextOptionsBuilder<ReservationDbContext>().Options;
+        static public ReservationDbContext context = new ReservationDbContext(options);
+        static public RoomService roomService = new RoomService(context);
+
+        //public object Options { get => options; set => options = value; }
 
         public MainWindow(IRoomService roomService)
         {
             InitializeComponent();
-            _roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
+            //_roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
+            
         }
 
         private void AddReservationBTN_Click(object sender, RoutedEventArgs e)
@@ -40,12 +48,12 @@ namespace WpfAppNew
                 {
                     StartDate = startDate,
                     EndDate = endDate,
-                    Room = new Room { Id = roomId },
+                    Room = new Room { Id = roomId, Name = "Sala 1", Capacity = 10, Reservations = null},
                     UserId = userId
                 };
 
                 //add a reservation
-                _roomService.AddReservation(reservation);
+                roomService.AddReservation(reservation);
 
                 //inform about successful reservation
                 MessageBox.Show("Rezerwacja została dodana pomyślnie!",
@@ -62,8 +70,14 @@ namespace WpfAppNew
 
         private bool IsRoomAvailable(int roomId, DateTime start, DateTime end)
         {
-            var availableRooms = _roomService.GetAvaiableRooms(start, end);
-            return availableRooms.Any(r => r.Id == roomId);
+            if (roomService.GetAvaiableRooms(start, end) != null)
+            {
+                var availableRooms = roomService.GetAvaiableRooms(start, end);
+                return availableRooms.Any(r => r.Id == roomId);
+            }
+            else return false;
+            //var availableRooms = roomService.GetAvaiableRooms(start, end);
+            
         }
 
         private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
@@ -73,7 +87,7 @@ namespace WpfAppNew
                 var startDate = DateTime.Today;
                 var endDate = DateTime.Today.AddDays(1);
 
-                var availableRooms = _roomService.GetAvaiableRooms(startDate, endDate).ToList();
+                var availableRooms = roomService.GetAvaiableRooms(startDate, endDate).ToList();
 
                 var message = availableRooms.Any()
                     ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
