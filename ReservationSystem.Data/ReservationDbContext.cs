@@ -13,11 +13,15 @@ namespace ReservationSystem.Data
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
 
+        
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) { }
+
+        //dotnet ef database update
+        public ReservationDbContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            if(!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ReservationSystem;Trusted_Connection=True;");
+            if(!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ReservationSystem;Trusted_Connection=True;Integrated Security=True;");
         }
     }
 }
