@@ -12,6 +12,7 @@ namespace ReservationSystem.Core
         public int Id { get; set; }
         public string Name { get; set; }
         public int Capacity { get; set; }
-        public List<Reservation> Reservations { get; set; }
+        //public List<Reservation> Reservations { get; set; }
+        public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
     }
 }

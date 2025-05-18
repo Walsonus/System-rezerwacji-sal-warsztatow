@@ -23,5 +23,14 @@ namespace ReservationSystem.Data
         {
             if(!optionsBuilder.IsConfigured) optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=ReservationSystem;Trusted_Connection=True;Integrated Security=True;");
         }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Reservation>()
+                .HasOne(r => r.Room)
+                .WithMany(r => r.Reservations)
+                .HasForeignKey(r => r.RoomId)
+                .OnDelete(DeleteBehavior.Restrict);
+        }
     }
 }
