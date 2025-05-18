@@ -9,6 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Views\login_icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\" />
   </ItemGroup>
 
@@ -24,6 +28,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ReservationSystem.Core\ReservationSystem.Core.csproj" />
     <ProjectReference Include="..\ReservationSystem.Data\ReservationSystem.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Views\login_icon.png" />
   </ItemGroup>
 
 </Project>

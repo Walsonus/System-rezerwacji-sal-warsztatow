@@ -7,99 +7,111 @@ using System.Linq;
 using System.Text;
 using System.Windows;
 
-namespace WpfAppNew
+namespace WpfAppNew;
+
+public partial class MainWindow : MetroWindow
 {
-    public partial class MainWindow : MetroWindow
+    //private readonly RoomService roomService;
+    static public DbContextOptions<ReservationDbContext> options = new DbContextOptionsBuilder<ReservationDbContext>().Options;
+    static public ReservationDbContext context = new ReservationDbContext(options);
+    static public RoomService roomService = new RoomService(context);
+    private object roomList;
+
+    //public object Options { get => options; set => options = value; }
+
+    public MainWindow(IRoomService roomService)
     {
-        //private readonly RoomService roomService;
-        static public DbContextOptions<ReservationDbContext> options = new DbContextOptionsBuilder<ReservationDbContext>().Options;
-        static public ReservationDbContext context = new ReservationDbContext(options);
-        static public RoomService roomService = new RoomService(context);
+        InitializeComponent();
+        WindowStartupLocation = WindowStartupLocation.CenterScreen;
+        ResizeMode = ResizeMode.NoResize;
+        //_roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
+        
+    }
 
-        //public object Options { get => options; set => options = value; }
 
-        public MainWindow(IRoomService roomService)
+    //adding reservation
+    private void AddReservationBTN_Click(object sender, RoutedEventArgs e)
+    {
+        try
         {
-            InitializeComponent();
-            //_roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
-            
-        }
+            var existingRoom = roomService.GetRoomById(1);
 
-        private void AddReservationBTN_Click(object sender, RoutedEventArgs e)
-        {
-            try
+            if (existingRoom == null)
             {
-                //choosing by user from form
-                int roomId = 1;
-                int userId = 1;
-                DateTime startDate = DateTime.Now;
-                DateTime endDate = DateTime.Now.AddHours(2);
-
-                //check if available
-                if (!IsRoomAvailable(roomId, startDate, endDate))
+                var newRoom = new Room
                 {
-                    MessageBox.Show("Wybrana sala jest już zajęta w podanym terminie!",
-                        "ErrorReservation",
-                        MessageBoxButton.OK,
-                        MessageBoxImage.Warning);
-                    return;
-                }
-                var reservation = new Reservation
-                {
-                    StartDate = startDate,
-                    EndDate = endDate,
-                    Room = new Room { Id = roomId, Name = "Sala 1", Capacity = 10, Reservations = null},
-                    UserId = userId
+                    Name = "SALA KONFERENCYJNA A",
+                    Capacity = 20
                 };
-
-                //add a reservation
-                roomService.AddReservation(reservation);
-
-                //inform about successful reservation
-                MessageBox.Show("Rezerwacja została dodana pomyślnie!",
-                    "Success",
-                    MessageBoxButton.OK,
-                    MessageBoxImage.Information);
+                roomService.AddRoom(newRoom);
+                existingRoom = newRoom;
+                MessageBox.Show("Pokój został pomyślnie dodany");
             }
-            catch (Exception ex)
+
+            // Teraz tworzymy rezerwację dla istniejącego pokoju
+            var reservation = new Reservation
             {
-                MessageBox.Show($"Błąd: {ex.Message}\n\nSzczegóły:\n{ex.InnerException?.Message}", "Error",
-               MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                Room = existingRoom,
+                RoomId = existingRoom.Id,
+                StartDate = new DateTime(2025, 6, 12),
+                EndDate = new DateTime(2025, 6, 13),
+                UserId = 1
+            };
+
+            roomService.AddReservation(reservation);
+            MessageBox.Show("Rezerwacja została pomyślnie dodana");
         }
-
-        private bool IsRoomAvailable(int roomId, DateTime start, DateTime end)
+        catch (Exception ex)
         {
-            if (roomService.GetAvaiableRooms(start, end) != null)
+            string errorMessage = ex.Message;
+            if (ex.InnerException != null)
             {
-                var availableRooms = roomService.GetAvaiableRooms(start, end);
-                return availableRooms.Any(r => r.Id == roomId);
+                errorMessage += "\nInner Exception: " + ex.InnerException.Message;
             }
-            else return false;
-            //var availableRooms = roomService.GetAvaiableRooms(start, end);
-            
-        }
-
-        private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                var startDate = DateTime.Today;
-                var endDate = DateTime.Today.AddDays(1);
-
-                var availableRooms = roomService.GetAvaiableRooms(startDate, endDate).ToList();
-
-                var message = availableRooms.Any()
-                    ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
-                    : "Brak dostępnych sal w podanym terminie.";
-
-                MessageBox.Show(message, "Dostępne sale");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Błąd: {ex.Message}", "Error",
-                              MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            MessageBox.Show(errorMessage, "Błąd zapisu", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+
+    //button for showing available rooms
+    private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
+    {
+        try
+        {
+            var startDate = DateTime.Today;
+            var endDate = DateTime.Today.AddDays(1);
+
+            var availableRooms = roomService.GetAvaiableRooms(startDate, endDate).ToList();
+
+            var message = availableRooms.Any()
+                ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
+                : "Brak dostępnych sal w podanym terminie.";
+
+            MessageBox.Show(message, "Dostępne sale");
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show($"Błąd: {ex.Message}", "Error",
+                          MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+    }
+
+
+    //button for login
+    private void loginBTN_Click(object sender, RoutedEventArgs e)
+    {
+
+    }
+
+    //button for showing own reservations
+    private void ShowOwnReservationsBTN_Click(object sender, RoutedEventArgs e)
+    {
+        var reservationsWindow = new ReservationsWindow(roomService)
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen,
+            ResizeMode = ResizeMode.NoResize,
+        };
+        reservationsWindow.Show();
+        this.Close();
+    }
+
 }

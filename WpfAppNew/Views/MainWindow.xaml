@@ -26,6 +26,13 @@
                 FontFamily="Impact" FontSize="20" Click="AddReservationBTN_Click">
             <TextBlock Text="Rezerwuj salę" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         </Button>
+        <Button x:Name="loginBTN" Width="50" Height="50" 
+        Grid.Row="0" Grid.Column="2"
+        Click="loginBTN_Click"
+        HorizontalAlignment="Right" VerticalAlignment="Top"
+        Margin="10">
+            <Image Source="/Views/login_icon.png" Width="45" Height="45" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
 
         <Button x:Name="showAvailableRoomsBTN" Height="100" Width="200" Grid.Row="1" Grid.Column="1"
                 FontFamily="Impact" FontSize="20" Click="ShowAvailableRoomsBTN_Click"> 
@@ -33,7 +40,7 @@
         </Button>
 
             <Button x:Name="showReservationBTN" Height="100" Width="200" Grid.Row="1" Grid.Column="2" 
-                    FontFamily="Impact" FontSize="20">
+                    FontFamily="Impact" FontSize="20" Click="ShowOwnReservationsBTN_Click">
             <TextBlock Text="Sprawdź rezerwacje" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
         </Button>
 

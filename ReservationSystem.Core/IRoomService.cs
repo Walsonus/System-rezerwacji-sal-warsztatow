@@ -12,5 +12,6 @@ namespace ReservationSystem.Core
         void AddReservation(Reservation reservation);
         void AddRoom(Room room);
         List<Room> GetAllRooms();
+        Room GetRoomById(int id);
     }
 }
