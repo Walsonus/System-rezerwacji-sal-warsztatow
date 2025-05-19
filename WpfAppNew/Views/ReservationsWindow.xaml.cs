@@ -48,6 +48,10 @@ namespace WpfAppNew
             }
         }
 
+        private void loginBTN_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
         private void backBTN_Click(object sender, RoutedEventArgs e)
         {
             var mainWindow = new MainWindow(_roomService)

@@ -92,9 +92,6 @@ public partial class MainWindow : MetroWindow
         {
             MessageBox.Show($"Błąd: {ex.Message}", "Error",
                           MessageBoxButton.OK, MessageBoxImage.Error);
-        }
-    }
-
 
     //button for login
     private void loginBTN_Click(object sender, RoutedEventArgs e)
@@ -123,5 +120,4 @@ public partial class MainWindow : MetroWindow
         reservationsWindow.Show();
         this.Close();
     }
-
 }
