@@ -12,6 +12,7 @@ namespace ReservationSystem.Data
     {
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Reservation> Reservations { get; set; }
+        public DbSet<User> Users { get; set; }
 
         
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) { }
@@ -31,6 +32,12 @@ namespace ReservationSystem.Data
                 .WithMany(r => r.Reservations)
                 .HasForeignKey(r => r.RoomId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Reservation>()
+                .HasOne(r => r.User)
+                .WithMany(r => r.Reservations)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
