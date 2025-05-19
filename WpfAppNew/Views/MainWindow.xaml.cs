@@ -92,15 +92,22 @@ public partial class MainWindow : MetroWindow
         {
             MessageBox.Show($"Błąd: {ex.Message}", "Error",
                           MessageBoxButton.OK, MessageBoxImage.Error);
-        }
-    }
-
 
     //button for login
     private void loginBTN_Click(object sender, RoutedEventArgs e)
     {
+        var userService = new UserService(context);
+        var roomService = new RoomService(context);
 
+        var loginWindow = new LoginWindow(userService, roomService)
+        {
+            WindowStartupLocation = WindowStartupLocation.CenterScreen,
+            ResizeMode = ResizeMode.NoResize,
+        };
+        loginWindow.Show();
+        this.Close();
     }
+
 
     //button for showing own reservations
     private void ShowOwnReservationsBTN_Click(object sender, RoutedEventArgs e)
@@ -113,5 +120,4 @@ public partial class MainWindow : MetroWindow
         reservationsWindow.Show();
         this.Close();
     }
-
 }

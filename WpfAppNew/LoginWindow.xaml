@@ -1,0 +1,44 @@
+﻿<mah:MetroWindow x:Class="WpfAppNew.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNew"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Image Source="/Views/login_icon.png" Width="150" Height="150" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Grid.Row="1" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBox x:Name="UsernameTextBox" 
+                     mah:TextBoxHelper.Watermark="Nazwa użytkownika"
+                     Margin="0,0,0,10"/>
+            <PasswordBox x:Name="PasswordBox" 
+                         mah:TextBoxHelper.Watermark="Hasło"/>
+            <Button x:Name="loginBTN" Width="150" Height="10" FontFamily="Impact" FontSize="15" Margin="10" Click="loginBTN_Click">
+                <TextBlock Text="ZALOGUJ" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+            </Button>
+        </StackPanel>
+        
+        <Button x:Name="registrationBTN" Width="150" Height="10" Grid.Row="2" FontFamily="Impact" FontSize="15" 
+                Margin="10" VerticalAlignment="Top" Click="registrationBTN_Click">
+            <TextBlock Text="ZAREJESTRUJ" TextWrapping="Wrap" TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+        <Button x:Name="backBTN" Height="50" Width="100" 
+        Grid.Row="2" Grid.Column="1" 
+        HorizontalAlignment="Right" VerticalAlignment="Bottom" 
+        Margin="10" FontFamily="Impact" FontSize="20" 
+        Click="backBTN_Click">
+            <TextBlock Text="Wstecz" TextWrapping="Wrap" 
+              TextAlignment="Center" VerticalAlignment="Center"/>
+        </Button>
+    </Grid>
+</mah:MetroWindow>
