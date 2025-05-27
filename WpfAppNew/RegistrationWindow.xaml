@@ -1,0 +1,50 @@
+﻿<mah:MetroWindow x:Class="WpfAppNew.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="Rejestracja" Height="450" Width="400"
+        WindowStartupLocation="CenterScreen">
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBox x:Name="UsernameTextBox" 
+                    mah:TextBoxHelper.Watermark="Nazwa użytkownika (min. 3 znaki)"
+                    Margin="0,0,0,10"
+                    MaxLength="50"/>
+
+            <PasswordBox x:Name="PasswordBox" 
+                        mah:TextBoxHelper.Watermark="Hasło (min. 8 znaków)"
+                        Margin="0,0,0,10"
+                        PasswordChar="*"
+                        PasswordChanged="PasswordBox_PasswordChanged"/>
+
+            <PasswordBox x:Name="ConfirmPasswordBox" 
+                        mah:TextBoxHelper.Watermark="Potwierdź hasło"
+                        Margin="0,0,0,15"
+                        PasswordChar="*"
+                        PasswordChanged="ConfirmPasswordBox_PasswordChanged"/>
+
+            <ComboBox x:Name="RoleComboBox"
+                     Margin="0,0,0,20"
+                     FontSize="14"/>
+
+            <Button x:Name="RegisterButton"
+        Content="REJESTRACJA"
+        Height="40"
+        Margin="0,10,0,0"
+        FontSize="16"/>
+
+            <TextBlock x:Name="ErrorTextBlock"
+                      Foreground="Red"
+                      TextWrapping="Wrap"
+                      Margin="0,10,0,0"/>
+
+            <Button x:Name="backBTN" 
+                    Content="Wstecz" 
+                    Height="40"
+                    FontSize="14"
+                    Click="backBTN_Click"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Right"/>
+        </StackPanel>
+    </Grid>
+</mah:MetroWindow>

@@ -14,12 +14,10 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <!-- Nagłówek -->
         <TextBox IsReadOnly="True" Grid.Row="0" Grid.Column="0" Text="REZERWACJE"  
                  FontFamily="Impact" FontSize="70"
                  VerticalAlignment="Center" HorizontalAlignment="Center" BorderThickness="0"/>
 
-        <!-- Przycisk logowania -->
         <Button x:Name="loginBTN" Width="50" Height="50" 
                 Grid.Row="0" Click="loginBTN_Click"
                 HorizontalAlignment="Right" VerticalAlignment="Top"
