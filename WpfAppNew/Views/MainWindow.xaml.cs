@@ -4,120 +4,145 @@ using ReservationSystem.Core;
 using ReservationSystem.Data;
 using System;
 using System.Linq;
-using System.Text;
 using System.Windows;
 
-namespace WpfAppNew;
-
-public partial class MainWindow : MetroWindow
+namespace WpfAppNew
 {
-    //private readonly RoomService roomService;
-    static public DbContextOptions<ReservationDbContext> options = new DbContextOptionsBuilder<ReservationDbContext>().Options;
-    static public ReservationDbContext context = new ReservationDbContext(options);
-    static public RoomService roomService = new RoomService(context);
-    private object roomList;
-
-    //public object Options { get => options; set => options = value; }
-
-    public MainWindow(IRoomService roomService)
+    public partial class MainWindow : MetroWindow
     {
-        InitializeComponent();
-        WindowStartupLocation = WindowStartupLocation.CenterScreen;
-        ResizeMode = ResizeMode.NoResize;
-        //_roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
-        
-    }
+        private readonly ReservationDbContext _context;
+        static public IUserService _userService = new UserService(new ReservationDbContext());
+        static public RoomService _roomService = new RoomService(new ReservationDbContext(), _userService);
+        private User _currentUser;
 
-
-    //adding reservation
-    private void AddReservationBTN_Click(object sender, RoutedEventArgs e)
-    {
-        try
+        public MainWindow()
         {
-            var existingRoom = roomService.GetRoomById(1);
+            InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            ResizeMode = ResizeMode.NoResize;
 
-            if (existingRoom == null)
+            // Inicjalizacja serwisów
+            _context = new ReservationDbContext(new DbContextOptionsBuilder<ReservationDbContext>().Options);
+
+            // Sprawdź czy użytkownik jest zalogowany
+            _currentUser = null;
+        }
+
+        private void AddReservationBTN_Click(object sender, RoutedEventArgs e)
+        {
+            if (_currentUser == null)
             {
-                var newRoom = new Room
-                {
-                    Name = "SALA KONFERENCYJNA A",
-                    Capacity = 20
-                };
-                roomService.AddRoom(newRoom);
-                existingRoom = newRoom;
-                MessageBox.Show("Pokój został pomyślnie dodany");
+                MessageBox.Show("Musisz być zalogowany, aby dokonać rezerwacji", "Błąd",
+                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
             }
 
-            // Teraz tworzymy rezerwację dla istniejącego pokoju
-            var reservation = new Reservation
+            try
             {
-                Room = existingRoom,
-                RoomId = existingRoom.Id,
-                StartDate = new DateTime(2025, 6, 12),
-                EndDate = new DateTime(2025, 6, 13),
-                UserId = 1
+                if (!_userService.HasAccess(_currentUser, "Prowadzacy"))
+                {
+                    MessageBox.Show("Tylko prowadzący mogą dokonywać rezerwacji", "Brak uprawnień",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                var existingRoom = _roomService.GetRoomById(1);
+
+                if (existingRoom == null)
+                {
+                    MessageBox.Show("Najpierw administrator musi dodać sale", "Błąd",
+                        MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                var reservation = new Reservation
+                {
+                    Room = existingRoom,
+                    RoomId = existingRoom.Id,
+                    StartDate = new DateTime(2025, 6, 12),
+                    EndDate = new DateTime(2025, 6, 13),
+                    UserId = _currentUser.UserId
+                };
+
+                _roomService.AddReservation(reservation, _currentUser);
+                MessageBox.Show("Rezerwacja została pomyślnie dodana", "Sukces",
+                    MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            catch (Exception ex)
+            {
+                string errorMessage = ex.Message;
+                if (ex.InnerException != null)
+                {
+                    errorMessage += "\nInner Exception: " + ex.InnerException.Message;
+                }
+                MessageBox.Show(errorMessage, "Błąd zapisu", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var startDate = DateTime.Today;
+                var endDate = DateTime.Today.AddDays(1);
+
+                var availableRooms = _roomService.GetAvaiableRooms(startDate, endDate).ToList();
+
+                var message = availableRooms.Any()
+                    ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
+                    : "Brak dostępnych sal w podanym terminie.";
+
+                MessageBox.Show(message, "Dostępne sale");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Błąd: {ex.Message}", "Error",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
+        private void loginBTN_Click(object sender, RoutedEventArgs e)
+        {
+            var loginWindow = new LoginWindow(_userService, _roomService)
+            {
+                Owner = this,
+                WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                ResizeMode = ResizeMode.NoResize,
             };
 
-            roomService.AddReservation(reservation);
-            MessageBox.Show("Rezerwacja została pomyślnie dodana");
-        }
-        catch (Exception ex)
-        {
-            string errorMessage = ex.Message;
-            if (ex.InnerException != null)
+            if (loginWindow.ShowDialog() == true)
             {
-                errorMessage += "\nInner Exception: " + ex.InnerException.Message;
+                _currentUser = loginWindow.AuthenticatedUser;
+                MessageBox.Show($"Zalogowano jako: {_currentUser.Login} ({_currentUser.Role})",
+                    "Zalogowano", MessageBoxButton.OK, MessageBoxImage.Information);
             }
-            MessageBox.Show(errorMessage, "Błąd zapisu", MessageBoxButton.OK, MessageBoxImage.Error);
         }
-    }
 
-    //button for showing available rooms
-    private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
-    {
-        try
+        private void ShowOwnReservationsBTN_Click(object sender, RoutedEventArgs e)
         {
-            var startDate = DateTime.Today;
-            var endDate = DateTime.Today.AddDays(1);
+            try
+            {
+                if (_currentUser == null)
+                {
+                    MessageBox.Show("Musisz być zalogowany, aby zobaczyć swoje rezerwacje",
+                                  "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
 
-            var availableRooms = roomService.GetAvaiableRooms(startDate, endDate).ToList();
-
-            var message = availableRooms.Any()
-                ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
-                : "Brak dostępnych sal w podanym terminie.";
-
-            MessageBox.Show(message, "Dostępne sale");
+                var reservationsWindow = new ReservationsWindow(_roomService, _currentUser)
+                {
+                    Owner = this,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    ResizeMode = ResizeMode.NoResize
+                };
+                reservationsWindow.Show();
+                //this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Wystąpił błąd: {ex.Message}", "Błąd",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
-        catch (Exception ex)
-        {
-            MessageBox.Show($"Błąd: {ex.Message}", "Error",
-                          MessageBoxButton.OK, MessageBoxImage.Error);
-
-    //button for login
-    private void loginBTN_Click(object sender, RoutedEventArgs e)
-    {
-        var userService = new UserService(context);
-        var roomService = new RoomService(context);
-
-        var loginWindow = new LoginWindow(userService, roomService)
-        {
-            WindowStartupLocation = WindowStartupLocation.CenterScreen,
-            ResizeMode = ResizeMode.NoResize,
-        };
-        loginWindow.Show();
-        this.Close();
-    }
-
-
-    //button for showing own reservations
-    private void ShowOwnReservationsBTN_Click(object sender, RoutedEventArgs e)
-    {
-        var reservationsWindow = new ReservationsWindow(roomService)
-        {
-            WindowStartupLocation = WindowStartupLocation.CenterScreen,
-            ResizeMode = ResizeMode.NoResize,
-        };
-        reservationsWindow.Show();
-        this.Close();
     }
 }

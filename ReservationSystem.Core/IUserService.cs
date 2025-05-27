@@ -11,5 +11,6 @@ namespace ReservationSystem.Core
         User Register(string username, string password, UserRole role);
         User Authenticate(string username, string password);
         User GetUserById(int userId);
+        bool HasAccess(User user, string requiredRole);
     }
 }

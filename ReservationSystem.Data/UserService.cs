@@ -39,5 +39,11 @@ namespace ReservationSystem.Data
             var hash = sha.ComputeHash(bytes);
             return Convert.ToBase64String(hash);
         }
+
+        public bool HasAccess(User user, string requiredRole)
+        {
+            if (user == null) return false;
+            return user.Role.ToString() == requiredRole || user.Role == UserRole.Admin;
+        }
     }
 }

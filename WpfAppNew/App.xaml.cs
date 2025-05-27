@@ -23,6 +23,21 @@ namespace WpfAppNew
 
             var mainWindow = ServiceProvider.GetRequiredService<MainWindow>();
             mainWindow.Show();
+
+            // Globalna obsługa nieprzechwyconych wyjątków
+            AppDomain.CurrentDomain.UnhandledException += (sender, args) =>
+            {
+                Exception ex = (Exception)args.ExceptionObject;
+                MessageBox.Show($"Krytyczny błąd: {ex.Message}", "Błąd aplikacji",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+            };
+
+            DispatcherUnhandledException += (sender, args) =>
+            {
+                MessageBox.Show($"Błąd interfejsu: {args.Exception.Message}", "Błąd",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+                args.Handled = true;
+            };
         }
 
         private void ConfigureServices(IServiceCollection services)

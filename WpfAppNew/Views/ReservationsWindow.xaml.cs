@@ -10,55 +10,54 @@ namespace WpfAppNew
     public partial class ReservationsWindow : MetroWindow
     {
         private readonly IRoomService _roomService;
+        private readonly User _currentUser;
 
-        public ReservationsWindow(IRoomService roomService)
+        public ReservationsWindow(IRoomService roomService, User currentUser)
         {
             InitializeComponent();
             _roomService = roomService ?? throw new ArgumentNullException(nameof(roomService));
+            _currentUser = currentUser ?? throw new ArgumentNullException(nameof(currentUser));
 
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             ResizeMode = ResizeMode.NoResize;
 
-            LoadReservations();
+            Loaded += (s, e) => LoadReservations(); // Załaduj rezerwacje PO otwarciu okna
         }
 
         private void LoadReservations()
         {
             try
             {
-                var rooms = _roomService.GetAllRooms();
-                var allReservations = new List<Reservation>();
-
-                foreach (var room in rooms)
+                if (_currentUser == null)
                 {
-                    if (room.Reservations != null && room.Reservations.Any())
-                    {
-                        allReservations.AddRange(room.Reservations);
-                    }
+                    MessageBox.Show("Nie jesteś zalogowany", "Błąd",
+                                  MessageBoxButton.OK, MessageBoxImage.Error);
+                    Close();
+                    return;
                 }
 
-                reservationsList.ItemsSource = allReservations.OrderBy(r => r.StartDate);
+                var reservations = _roomService.GetUserReservations(_currentUser.UserId);
+                if (reservations == null || !reservations.Any())
+                {
+                    MessageBox.Show("Brak rezerwacji do wyświetlenia", "Informacja",
+                                  MessageBoxButton.OK, MessageBoxImage.Information);
+                    //return;
+                }
+
+                reservationsList.ItemsSource = reservations
+                    .OrderBy(r => r.StartDate)
+                    .ToList();
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Błąd podczas ładowania rezerwacji: {ex.Message}",
-                              "Błąd",
-                              MessageBoxButton.OK,
-                              MessageBoxImage.Error);
+                MessageBox.Show($"Błąd ładowania rezerwacji: {ex.Message}", "Błąd",
+                              MessageBoxButton.OK, MessageBoxImage.Error);
+                Close();
             }
         }
-
-        private void loginBTN_Click(object sender, RoutedEventArgs e)
-        {
-        }
-
         private void backBTN_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow(_roomService)
-            {
-                WindowStartupLocation = WindowStartupLocation.CenterScreen,
-                ResizeMode = ResizeMode.NoResize,
-            };
+            var mainWindow = new MainWindow();
             mainWindow.Show();
             this.Close();
         }
