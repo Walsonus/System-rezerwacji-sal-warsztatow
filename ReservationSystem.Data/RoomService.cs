@@ -12,14 +12,22 @@ namespace ReservationSystem.Data
     {
         // getting the context from the database
         private ReservationDbContext context;
-        public RoomService(ReservationDbContext context)
+        private IUserService userService;
+        public RoomService(ReservationDbContext context, IUserService userService)
         {
             this.context = context;
+            this.userService = userService;
+        }
+
+        public RoomService(ReservationDbContext context) : this(context, null)
+        {
         }
 
         //method to add a reservation
-        public void AddReservation(Reservation reservation)
+        public void AddReservation(Reservation reservation, User user)
         {
+
+            if (userService == null || !userService.HasAccess(user, "Prowadzacy")) throw new UnauthorizedAccessException("Tylko prowadzący mogą dokonywać rezerwacji");
             // Walidacja
             if (reservation.Room == null && reservation.RoomId == 0)
             {
@@ -38,7 +46,7 @@ namespace ReservationSystem.Data
             {
                 throw new ArgumentException($"Pokój o ID {reservation.RoomId} nie istnieje");
             }
-
+            reservation.UserId = user.UserId;
             context.Reservations.Add(reservation);
             context.SaveChanges();
         }
@@ -63,6 +71,16 @@ namespace ReservationSystem.Data
             => context.Rooms
                 .Where(room => !room.Reservations.Any(reservation =>
                                   reservation.StartDate < end && reservation.EndDate > start)).ToList();
-    }
 
+
+        public List<Reservation> GetUserReservations(int userId)
+        {
+            return context.Reservations
+                .Include(r => r.Room)
+                .Where(r => r.UserId == userId)
+                .AsNoTracking()
+                .ToList();
+        }
+
+    }
 }

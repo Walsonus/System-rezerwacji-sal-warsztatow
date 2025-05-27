@@ -39,7 +39,8 @@ namespace WpfAppNew
                 var roles = new Dictionary<UserRole, string>
                 {
                     { UserRole.Student, "Student" },
-                    { UserRole.Prowadzacy, "Prowadzący" }
+                    { UserRole.Prowadzacy, "Prowadzący" },
+                    { UserRole.Admin, "Admin" }
                 };
 
                 RoleComboBox.ItemsSource = roles;
@@ -128,7 +129,7 @@ namespace WpfAppNew
 
         private void backBTN_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new LoginWindow(_userService, new RoomService(new ReservationDbContext()))
+            var loginWindow = new LoginWindow(_userService, new RoomService(new ReservationDbContext(), _userService))
             {
                 WindowStartupLocation = WindowStartupLocation.CenterScreen
             };
