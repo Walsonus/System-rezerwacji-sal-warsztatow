@@ -15,10 +15,16 @@ namespace ReservationSystem.Data
         public DbSet<User> Users { get; set; }
 
         
-        public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) { }
+        public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) 
+        {
+            Database.EnsureCreated();
+        }
 
         //dotnet ef database update
-        public ReservationDbContext() { }
+        public ReservationDbContext() 
+        {
+            Database.EnsureCreated();
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
