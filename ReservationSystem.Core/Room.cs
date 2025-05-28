@@ -14,5 +14,12 @@ namespace ReservationSystem.Core
         public int Capacity { get; set; }
         //public List<Reservation> Reservations { get; set; }
         public ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
+
+        public Room(string name, int capacity)
+        {
+            this.Name = name;
+            this.Capacity = capacity;
+            Reservations = new List<Reservation>();
+        }
     }
 }

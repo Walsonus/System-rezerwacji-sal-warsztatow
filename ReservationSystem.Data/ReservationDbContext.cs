@@ -17,13 +17,13 @@ namespace ReservationSystem.Data
         
         public ReservationDbContext(DbContextOptions<ReservationDbContext> options) : base(options) 
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         //dotnet ef database update
         public ReservationDbContext() 
         {
-            Database.EnsureCreated();
+            //Database.EnsureCreated();
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

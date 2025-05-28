@@ -21,6 +21,20 @@ namespace WpfAppNew
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             ResizeMode = ResizeMode.NoResize;
 
+            // Inicjalizacja bazy danych z migracjami
+            using (var dbContext = new ReservationDbContext())
+            {
+                dbContext.Database.Migrate();
+
+                // Dodawanie początkowych danych jeśli baza była pusta
+                if (!dbContext.Users.Any())
+                {
+                    dbContext.Users.Add(new User("admin", "admin", UserRole.Admin));
+                    dbContext.Rooms.Add(new Room("Aula 1", 100));
+                    dbContext.SaveChanges();
+                }
+            }
+
             // Inicjalizacja serwisów
             _context = new ReservationDbContext(new DbContextOptionsBuilder<ReservationDbContext>().Options);
 
