@@ -57,8 +57,6 @@ namespace WpfAppNew
         }
         private void backBTN_Click(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new MainWindow();
-            mainWindow.Show();
             this.Close();
         }
     }
