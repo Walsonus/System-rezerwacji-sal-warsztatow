@@ -23,6 +23,12 @@ namespace ReservationSystem.Data
         {
         }
 
+        public bool IsRoomAvailable(int  roomId, DateTime startDate, DateTime endDate)
+        {
+            return !context.Reservations
+                .Any(r => r.RoomId == roomId && r.StartDate < endDate && r.EndDate > startDate);
+        }
+
         //method to add a reservation
         public void AddReservation(Reservation reservation, User user)
         {
@@ -66,12 +72,13 @@ namespace ReservationSystem.Data
             return context.Rooms.FirstOrDefault(r => r.Id == id);
         }
 
-        //returns a list of available rooms
-        public List<Room> GetAvaiableRooms(DateTime start, DateTime end)
-            => context.Rooms
+        public List<Room> GetAvailableRooms(DateTime start, DateTime end)
+        {
+            return context.Rooms
                 .Where(room => !room.Reservations.Any(reservation =>
-                                  reservation.StartDate < end && reservation.EndDate > start)).ToList();
-
+                    reservation.StartDate < end && reservation.EndDate > start))
+                .ToList();
+        }
 
         public List<Reservation> GetUserReservations(int userId)
         {

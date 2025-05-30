@@ -1,0 +1,45 @@
+﻿<Window x:Class="WpfAppNew.AddReservationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppNew"
+        mc:Ignorable="d"
+        Title="Dodaj nową rezerwację" Height="400" Width="500"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" Text="Dodawanie nowej rezerwacji" 
+                   FontSize="16" FontWeight="Bold" Margin="0,0,0,10"/>
+
+        <!-- Room selection -->
+        <Label Grid.Row="1" Content="Wybierz salę:"/>
+        <ComboBox Grid.Row="2" x:Name="RoomComboBox" DisplayMemberPath="Name"
+                 SelectedValuePath="Id" Margin="0,0,0,10"/>
+
+        <!-- Start date -->
+        <Label Grid.Row="3" Content="Data rozpoczęcia:"/>
+        <DatePicker Grid.Row="4" x:Name="StartDatePicker" Margin="0,0,0,10"/>
+
+        <!-- End date -->
+        <Label Grid.Row="5" Content="Data zakończenia:"/>
+        <DatePicker Grid.Row="6" x:Name="EndDatePicker" Margin="0,0,0,20"/>
+
+        <!-- Buttons -->
+        <StackPanel Grid.Row="8" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button x:Name="SaveButton" Content="Zapisz" Width="80" Margin="0,0,10,0" Click="SaveButton_Click"/>
+            <Button x:Name="CancelButton" Content="Anuluj" Width="80" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -46,61 +46,34 @@ namespace WpfAppNew
         {
             if (_currentUser == null)
             {
-                MessageBox.Show("Musisz być zalogowany, aby dokonać rezerwacji", "Błąd",
-                    MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Musisz być zalogowany, aby zarządzać salami",
+                              "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            try
+            // Dla administratora - otwórz okno dodawania sali
+            if (_currentUser.Role == UserRole.Prowadzacy)
             {
-                if (!_userService.HasAccess(_currentUser, "Prowadzacy"))
+                var addReservationWindow = new AddReservationWindow(_currentUser, _roomService, _userService)
                 {
-                    MessageBox.Show("Tylko prowadzący mogą dokonywać rezerwacji", "Brak uprawnień",
-                        MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-
-                var existingRoom = _roomService.GetRoomById(1);
-
-                if (existingRoom == null)
-                {
-                    MessageBox.Show("Najpierw administrator musi dodać sale", "Błąd",
-                        MessageBoxButton.OK, MessageBoxImage.Warning);
-                    return;
-                }
-
-                var reservation = new Reservation
-                {
-                    Room = existingRoom,
-                    RoomId = existingRoom.Id,
-                    StartDate = new DateTime(2025, 6, 12),
-                    EndDate = new DateTime(2025, 6, 13),
-                    UserId = _currentUser.UserId
+                    Owner = this,
+                    WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                    ResizeMode = ResizeMode.NoResize
                 };
 
-                _roomService.AddReservation(reservation, _currentUser);
-                MessageBox.Show("Rezerwacja została pomyślnie dodana", "Sukces",
-                    MessageBoxButton.OK, MessageBoxImage.Information);
-            }
-            catch (Exception ex)
-            {
-                string errorMessage = ex.Message;
-                if (ex.InnerException != null)
+                if (addReservationWindow.ShowDialog() == true)
                 {
-                    errorMessage += "\nInner Exception: " + ex.InnerException.Message;
+                    MessageBox.Show("Rezerwacja została pomyślnie dodana", "Sukces",
+                                  MessageBoxButton.OK, MessageBoxImage.Information);
                 }
-                MessageBox.Show(errorMessage, "Błąd zapisu", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-        }
-
-        private void ShowAvailableRoomsBTN_Click(object sender, RoutedEventArgs e)
-        {
-            try
+            else
             {
+                // Dla innych ról - pokaż dostępne sale
                 var startDate = DateTime.Today;
                 var endDate = DateTime.Today.AddDays(1);
 
-                var availableRooms = _roomService.GetAvaiableRooms(startDate, endDate).ToList();
+                var availableRooms = _roomService.GetAvailableRooms(startDate, endDate).ToList();
 
                 var message = availableRooms.Any()
                     ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
@@ -108,12 +81,57 @@ namespace WpfAppNew
 
                 MessageBox.Show(message, "Dostępne sale");
             }
+        }
+
+        private void AddRoomsBTN_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                if (_currentUser == null)
+                {
+                    MessageBox.Show("Musisz być zalogowany, aby zarządzać salami",
+                                  "Błąd", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                // Dla administratora - otwórz okno dodawania sali
+                if (_currentUser.Role == UserRole.Admin)
+                {
+                    var addRoomWindow = new AddRoomWindow(_roomService)
+                    {
+                        Owner = this,
+                        WindowStartupLocation = WindowStartupLocation.CenterOwner,
+                        ResizeMode = ResizeMode.NoResize
+                    };
+
+                    if (addRoomWindow.ShowDialog() == true)
+                    {
+                        MessageBox.Show("Sala została pomyślnie dodana", "Sukces",
+                                      MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                }
+                else
+                {
+                    // Dla innych ról - pokaż dostępne sale
+                    var startDate = DateTime.Today;
+                    var endDate = DateTime.Today.AddDays(1);
+
+                    var availableRooms = _roomService.GetAvailableRooms(startDate, endDate).ToList();
+
+                    var message = availableRooms.Any()
+                        ? string.Join(Environment.NewLine, availableRooms.Select(r => $"Sala: {r.Name}"))
+                        : "Brak dostępnych sal w podanym terminie.";
+
+                    MessageBox.Show(message, "Dostępne sale");
+                }
+            }
             catch (Exception ex)
             {
                 MessageBox.Show($"Błąd: {ex.Message}", "Error",
                               MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+    
 
         private void loginBTN_Click(object sender, RoutedEventArgs e)
         {

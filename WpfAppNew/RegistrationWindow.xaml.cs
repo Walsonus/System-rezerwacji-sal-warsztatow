@@ -129,11 +129,6 @@ namespace WpfAppNew
 
         private void backBTN_Click(object sender, RoutedEventArgs e)
         {
-            var loginWindow = new LoginWindow(_userService, new RoomService(new ReservationDbContext(), _userService))
-            {
-                WindowStartupLocation = WindowStartupLocation.CenterScreen
-            };
-            loginWindow.Show();
             this.Close();
         }
     }
