@@ -19,11 +19,8 @@ namespace WpfAppNew
         {
             try
             {
-                var room = new Room
-                {
-                    Name = NameTextBox.Text,
-                    Capacity = int.Parse(CapacityTextBox.Text),
-                };
+                var room = new Room(NameTextBox.Text, int.Parse(CapacityTextBox.Text));
+                
 
                 _roomService.AddRoom(room);
                 DialogResult = true;
